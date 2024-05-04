@@ -15,11 +15,6 @@ export const routes: Routes = [
         path:'carrito/:id',
         component: DetallesCarritoComponent,
         title: "Detalles Carrito"
-    },
-    {
-        path:'carrito/:id',
-        component: DetallesCarritoComponent,
-        title: "Detalles Carrito"
     },  
     {
         path:'configuracion',
