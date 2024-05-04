@@ -1,11 +1,11 @@
 <div class="header">
     <div class="container">
       <ul class="nav-links">
-        <li><a routerLink="/">Inicio</a></li>
-        <li><a routerLink="/cart-detail">Detalles</a></li>
-        <li><a routerLink="/settings">Configuración</a></li>
-        <li><a routerLink="/analytics">Analíticas</a></li>
-        <li><a routerLink="/history">Historial</a></li>
+        <li><a [routerLink]="['/']" routerLinkActive="router-link-active">Inicio</a></li>
+        <li><a [routerLink]="['/carrito/:id']" routerLinkActive="router-link-active">Detalles</a></li>
+        <li><a [routerLink]="['/configuracion']" routerLinkActive="router-link-active">Configuración</a></li>
+        <li><a [routerLink]="['/analiticas']" routerLinkActive="router-link-active">Analíticas</a></li>
+        <li><a [routerLink]="['/historial']" routerLinkActive="router-link-active">Historial</a></li>
       </ul>
     </div>
 </div>
