@@ -23,7 +23,7 @@ public:
     void setNombre(string nombre){ nombre = nombre; }
     void setSueldo(double sueldo){ sueldo = sueldo; }
     // Sobrecarga de escritura
-     friend ostream &operator <<(ostream &os, Registro p){
+    friend ostream &operator <<(ostream &os, Registro p){
         os << p.codigo << ",";
         os << p.nombre << ",";
         os << p.sueldo;

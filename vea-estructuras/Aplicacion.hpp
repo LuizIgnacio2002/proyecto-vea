@@ -14,7 +14,7 @@ private:
     ArbolAVL<Registro> arbolavl;
     TablaHashA<Registro> tablahasha;
     TablaHashC<Registro> tablahashc;
-    function<int(T, T)> comparacion;
+    function<int(Registro, Registro)> comparacion;
 public:
     Aplicacion(){
         auto comparacionCodigo = [](Registro r1, Registro r2){
@@ -42,6 +42,6 @@ public:
     ~Aplicacion(){}
 
     void iniciar(){
-        
+
     }
 };
