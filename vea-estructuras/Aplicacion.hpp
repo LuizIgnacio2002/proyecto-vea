@@ -27,6 +27,11 @@ private:
 public:
     Aplicacion();
     ~Aplicacion();
+    
+    void menuListaSimple();
+    void menuPila();
+    void menuCola();
+
     void menuArbolBB();
     void menuArbolAVL();
     void menuTablaHashA();

@@ -26,6 +26,18 @@ Aplicacion::Aplicacion(){
 
 Aplicacion::~Aplicacion(){}
 
+void Aplicacion::menuListaSimple(){
+
+}
+
+void Aplicacion::menuPila(){
+
+}
+
+void Aplicacion::menuCola(){
+
+}
+
 void Aplicacion::menuArbolBB(){
     int opcion;
     do{
@@ -95,30 +107,42 @@ void Aplicacion::menu(){
     int opcion;
     do{
         cout << "Menu de opciones" << endl;
-        cout << "1. ArbolBB" << endl;
-        cout << "2. ArbolAVL" << endl;
-        cout << "3. TablaHashA" << endl;
-        cout << "4. TablaHashC" << endl;
-        cout << "5. Salir" << endl;
+        cout << "1. ListaSimple" << endl;
+        cout << "2. Pila" << endl;
+        cout << "3. Cola" << endl;
+        cout << "4. ArbolBB" << endl;
+        cout << "5. ArbolAVL" << endl;
+        cout << "6. TablaHashA" << endl;
+        cout << "7. TablaHashC" << endl;
+        cout << "8. Salir" << endl;
         cout << "Opcion: "; cin >> opcion;
 
         switch(opcion){
             case 1:
-                Aplicacion::menuArbolBB();
+                Aplicacion::menuListaSimple();
                 break;
             case 2:
-                Aplicacion::menuArbolAVL();
+                Aplicacion::menuPila();
                 break;
             case 3:
-                Aplicacion::menuTablaHashA();
+                Aplicacion::menuCola();
                 break;
             case 4:
-                Aplicacion::menuTablaHashC();
+                Aplicacion::menuArbolBB();
                 break;
             case 5:
+                Aplicacion::menuArbolAVL();
+                break;
+            case 6:
+                Aplicacion::menuTablaHashA();
+                break;
+            case 7:
+                Aplicacion::menuTablaHashC();
+                break;
+            case 8:
                 cout << "Hasta pronto" << endl;
         }
-    }while(opcion != 5);
+    }while(opcion != 8);
     
 }
 
