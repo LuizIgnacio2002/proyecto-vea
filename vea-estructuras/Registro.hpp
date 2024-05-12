@@ -15,10 +15,11 @@ public:
         this->sueldo = sueldo;
     }
     ~Registro(){}
-    // Metodo set y get
+    // Metodos get
     int getCodigo(){ return codigo; }
     string getNombre(){ return nombre; }
     double getSueldo(){ return sueldo; }
+    // Metodos set
     void setCodigo(int codigo){ codigo = codigo; }
     void setNombre(string nombre){ nombre = nombre; }
     void setSueldo(double sueldo){ sueldo = sueldo; }
