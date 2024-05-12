@@ -1,6 +1,9 @@
 #ifndef APLICACION_H
 #define APLICACION_H
 
+#include "ListaSimple.hpp"
+#include "Pila.hpp"
+#include "Cola.hpp"
 #include "ArbolBB.hpp"
 #include "ArbolAVL.hpp"
 #include "TablaHashA.hpp"
@@ -13,6 +16,9 @@ using namespace std;
 
 class Aplicacion{
 private:
+    ListaSimple<Registro> listasimple;
+    Pila<Registro> pila;
+    Cola<Registro> cola;
     ArbolBB<Registro> arbolbb;
     ArbolAVL<Registro> arbolavl;
     TablaHashA<Registro> tablahasha;
