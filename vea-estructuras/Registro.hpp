@@ -1,3 +1,7 @@
+#include <iostream>
+
+using namespace std;
+
 class Registro {
 private:
     int codigo;
@@ -22,7 +26,7 @@ public:
      friend ostream &operator <<(ostream &os, Registro p){
         os << p.codigo << ",";
         os << p.nombre << ",";
-        os << p.sueldo <<;
+        os << p.sueldo;
         return os;
     }
 };

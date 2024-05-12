@@ -5,7 +5,6 @@
 
 #include "Registro.hpp"
 
-int main(){
-    Aplicacion aplicacion;
-    return 0;
-}
+class Aplicacion{
+
+};
