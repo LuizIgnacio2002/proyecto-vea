@@ -1,18 +1,27 @@
-#ifndef TABLLAHASHA_H
-#define TABLLAHASHA_H
+#ifndef TABLAHASHA_HPP
+#define TABLAHASHA_HPP
 
-#include <functional>
+#include <string>
+#include <vector>
+#include <iostream>
 
 using namespace std;
 
-template <class T>
-class EntidadTablaHashA{
+template <typename T>
+class TablaHashA {
+private:
+    static const int HashMod = 30;
+    vector<vector<T>> tabla;
     
+    unsigned long long ConvertirCaracterEntero(char entrada);
+    unsigned long long ObtenerNumero(std::string entrada);
+    int FuncionHash(std::string entrada);
+
+public:
+    TablaHashA();
+    void insertarClave(std::string clave);
+    void verElementos() const;
 };
 
-template <class T>
-class TablaHashA{
-    
-};
-
-#endif
+#include "TablaHashA.cpp"
+#endif // TABLAHASHA_HPP
