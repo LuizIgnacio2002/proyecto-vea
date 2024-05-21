@@ -26,8 +26,40 @@ Aplicacion::Aplicacion(){
 
 Aplicacion::~Aplicacion(){}
 
-void Aplicacion::menuListaSimple(){
 
+void Aplicacion::menuListaSimple(){
+    int opcion;
+    do{
+        cout << "Menu de ListaSimple" << endl;
+        cout << "1. Agregar" << endl;
+        cout << "2. Mostrar" << endl;
+        cout << "3. Actualizar" << endl;
+        cout << "4. Eliminar" << endl;
+        cout << "5. Salir" << endl;
+        cout << "Opcion: "; cin >> opcion;
+
+        switch(opcion){
+            case 1:
+                //agregarListaSimple();
+                // agregar from ListaSimple.cpp
+                // next line code
+                int dato;
+                cout << "Ingrese el dato: "; cin >> dato;
+                listasimple.agregar(dato);
+                
+
+                break;
+            case 2:
+                //mostrarListaSimple();
+                break;
+            case 3:
+                //actualizarListaSimple();
+                break;
+            case 4:
+                //eliminarListaSimple();
+                break;
+        }
+    }while(opcion != 5);
 }
 
 void Aplicacion::menuPila(){
@@ -149,3 +181,4 @@ void Aplicacion::menu(){
 void Aplicacion::iniciar(){
     Aplicacion::menu();
 }
+
