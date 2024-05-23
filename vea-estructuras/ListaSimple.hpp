@@ -1,8 +1,7 @@
 #ifndef LISTASIMPLE_H
 #define LISTASIMPLE_H
 
-
-#include <iostream> 
+#include <iostream>
 
 using namespace std;
 
@@ -47,5 +46,6 @@ public:
     void eliminar(T dato);
 };
 
-#endif // LISTASIMPLE_H
+#include "ListaSimple.cpp"
 
+#endif // LISTASIMPLE_H

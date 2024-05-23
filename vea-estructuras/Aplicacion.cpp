@@ -1,5 +1,6 @@
 #include "Aplicacion.hpp"
 
+
 Aplicacion::Aplicacion(){
     auto comparacionCodigo = [](Registro r1, Registro r2){
         if(r1.getCodigo() == r2.getCodigo()){
@@ -38,25 +39,36 @@ void Aplicacion::menuListaSimple(){
         cout << "5. Salir" << endl;
         cout << "Opcion: "; cin >> opcion;
 
+        int codigo;
+        string nombre;
+        double sueldo;
+
         switch(opcion){
             case 1:
                 //agregarListaSimple();
-                // agregar from ListaSimple.cpp
-                // next line code
-                int dato;
-                cout << "Ingrese el dato: "; cin >> dato;
-                listasimple.agregar(dato);
+                // read values from user
                 
-
+                cout << "Ingrese el codigo: "; cin >> codigo;
+                cout << "Ingrese el nombre: "; cin >> nombre;
+                cout << "Ingrese el sueldo: "; cin >> sueldo;
+                
+                listasimple.agregar(Registro(codigo, nombre, sueldo));
                 break;
             case 2:
                 //mostrarListaSimple();
+                listasimple.mostrar();
                 break;
             case 3:
                 //actualizarListaSimple();
+                cout << "Ingrese el codigo del registro a actualizar: "; cin >> codigo;
+                cout << "Ingrese el nuevo nombre: "; cin >> nombre;
+                cout << "Ingrese el nuevo sueldo: "; cin >> sueldo;
+                listasimple.actualizar(Registro(codigo, nombre, sueldo));
                 break;
             case 4:
                 //eliminarListaSimple();
+                cout << "Ingrese el codigo: "; cin >> codigo;
+                listasimple.eliminar(Registro(codigo, "", 0));
                 break;
         }
     }while(opcion != 5);

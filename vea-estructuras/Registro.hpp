@@ -30,4 +30,9 @@ public:
         os << p.sueldo;
         return os;
     }
+
+    bool operator==(const Registro& other) const {
+        return codigo == other.codigo;
+    }
+    
 };
