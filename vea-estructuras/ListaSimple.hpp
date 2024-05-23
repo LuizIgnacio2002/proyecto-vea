@@ -29,6 +29,7 @@ public:
     void setSiguiente(NodoListaSimple<T>* siguiente) {
         this->siguiente = siguiente;
     }
+    
 };
 
 template <class T>
