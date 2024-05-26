@@ -43,15 +43,8 @@ template <class T>
 void ListaSimple<T>::actualizar(T dato) {
     NodoListaSimple<T>* actual = this->primero;
     while (actual != nullptr) {
-        cout << "Actualizando " << endl;
-        // It compares using registro's codigo
         if (actual->getDato().getCodigo() == dato.getCodigo()) {
-            cout << "Encontrado" << endl;
-
-            // Directly assigning the fields
-            actual->getDato().setNombre(dato.getNombre());
-            actual->getDato().setSueldo(dato.getSueldo());
-
+            actual->setDato(dato);
             return;
         }
         actual = actual->getSiguiente();

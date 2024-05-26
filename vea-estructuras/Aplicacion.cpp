@@ -46,8 +46,6 @@ void Aplicacion::menuListaSimple(){
         switch(opcion){
             case 1:
                 //agregarListaSimple();
-                // read values from user
-                
                 cout << "Ingrese el codigo: "; cin >> codigo;
                 cout << "Ingrese el nombre: "; cin >> nombre;
                 cout << "Ingrese el sueldo: "; cin >> sueldo;
