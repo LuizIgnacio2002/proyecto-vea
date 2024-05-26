@@ -42,7 +42,7 @@ public:
     ListaSimple();
     ~ListaSimple();
     void agregar(T dato);
-    void mostrar();
+    void mostrar() const;
     void actualizar(T dato);
     void eliminar(T dato);
 };

@@ -16,9 +16,9 @@ public:
     }
     ~Registro(){}
     // Metodos get
-    int getCodigo(){ return codigo; }
-    string getNombre(){ return nombre; }
-    double getSueldo(){ return sueldo; }
+    int getCodigo() const { return codigo; }
+    string getNombre() const { return nombre; }
+    double getSueldo() const { return sueldo; }
     // Metodos set
     void setCodigo(int codigo){ codigo = codigo; }
     void setNombre(string nombre){ nombre = nombre; }
@@ -36,3 +36,12 @@ public:
     }
     
 };
+
+namespace std {
+    template <>
+    struct hash<Registro> {
+        size_t operator()(const Registro& r) const {
+            return hash<int>()(r.getCodigo());
+        }
+    };
+}

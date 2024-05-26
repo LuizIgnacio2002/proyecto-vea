@@ -30,7 +30,7 @@ void ListaSimple<T>::agregar(T dato) {
 }
 
 template <class T>
-void ListaSimple<T>::mostrar() {
+void ListaSimple<T>::mostrar() const {
     NodoListaSimple<T>* actual = this->primero;
     while (actual != nullptr) {
         cout << actual->getDato() << " -> ";

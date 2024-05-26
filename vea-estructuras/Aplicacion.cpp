@@ -82,6 +82,54 @@ void Aplicacion::menuCola(){
 
 }
 
+void Aplicacion::menuGrafo() {
+    int opcion;
+    do {
+        cout << "Menu de Grafo" << endl;
+        cout << "1. Agregar Vertice" << endl;
+        cout << "2. Agregar Arista" << endl;
+        cout << "3. Mostrar Grafo" << endl;
+        cout << "4. Eliminar Arista" << endl;
+        cout << "5. Eliminar Vertice" << endl;
+        cout << "6. Salir" << endl;
+        cout << "Opcion: "; cin >> opcion;
+
+        int codigo, codigo2;
+        string nombre, nombre2;
+        double sueldo, sueldo2;
+
+        switch (opcion) {
+            case 1:
+                cout << "Ingrese el codigo del vertice: "; cin >> codigo;
+                cout << "Ingrese el nombre: "; cin >> nombre;
+                cout << "Ingrese el sueldo: "; cin >> sueldo;
+                grafo.agregarVertice(Registro(codigo, nombre, sueldo));
+                break;
+            case 2:
+                cout << "Ingrese el codigo del vertice origen: "; cin >> codigo;
+                cout << "Ingrese el nombre origen: "; cin >> nombre;
+                cout << "Ingrese el sueldo origen: "; cin >> sueldo;
+                cout << "Ingrese el codigo del vertice destino: "; cin >> codigo2;
+                cout << "Ingrese el nombre destino: "; cin >> nombre2;
+                cout << "Ingrese el sueldo destino: "; cin >> sueldo2;
+                grafo.agregarArista(Registro(codigo, nombre, sueldo), Registro(codigo2, nombre2, sueldo2));
+                break;
+            case 3:
+                grafo.mostrarGrafo();
+                break;
+            case 4:
+                cout << "Ingrese el codigo del vertice origen: "; cin >> codigo;
+                cout << "Ingrese el codigo del destino: "; cin >> codigo2;
+                grafo.eliminarArista(Registro(codigo, "", 0), Registro(codigo2, "", 0));
+                break;
+            case 5:
+                cout << "Ingrese el codigo del vertice a eliminar: "; cin >> codigo;
+                grafo.eliminarVertice(Registro(codigo, "", 0));
+                break;
+        }
+    }while(opcion != 6);
+}
+
 void Aplicacion::menuArbolBB(){
     int opcion;
     do{
@@ -154,11 +202,12 @@ void Aplicacion::menu(){
         cout << "1. ListaSimple" << endl;
         cout << "2. Pila" << endl;
         cout << "3. Cola" << endl;
-        cout << "4. ArbolBB" << endl;
-        cout << "5. ArbolAVL" << endl;
-        cout << "6. TablaHashA" << endl;
-        cout << "7. TablaHashC" << endl;
-        cout << "8. Salir" << endl;
+        cout << "4. Grafo" << endl;
+        cout << "5. ArbolBB" << endl;
+        cout << "6. ArbolAVL" << endl;
+        cout << "7. TablaHashA" << endl;
+        cout << "8. TablaHashC" << endl;
+        cout << "9. Salir" << endl;
         cout << "Opcion: "; cin >> opcion;
 
         switch(opcion){
@@ -172,22 +221,22 @@ void Aplicacion::menu(){
                 Aplicacion::menuCola();
                 break;
             case 4:
+                Aplicacion::menuGrafo();
+                break;
+            case 5: 
                 Aplicacion::menuArbolBB();
                 break;
-            case 5:
+            case 6:
                 Aplicacion::menuArbolAVL();
                 break;
-            case 6:
+            case 7:
                 Aplicacion::menuTablaHashA();
                 break;
-            case 7:
+            case 8:
                 Aplicacion::menuTablaHashC();
                 break;
-            case 8:
-                cout << "Hasta pronto" << endl;
         }
-    }while(opcion != 8);
-    
+    }while(opcion != 9);
 }
 
 void Aplicacion::iniciar(){

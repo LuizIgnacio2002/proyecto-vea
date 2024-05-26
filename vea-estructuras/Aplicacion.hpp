@@ -4,10 +4,12 @@
 #include "ListaSimple.hpp"
 #include "Pila.hpp"
 #include "Cola.hpp"
+#include "Grafo.hpp"
 #include "ArbolBB.hpp"
 #include "ArbolAVL.hpp"
 #include "TablaHashA.hpp"
 #include "TablaHashC.hpp"
+
 
 #include "Registro.hpp"
 #include <functional>
@@ -19,6 +21,7 @@ private:
     ListaSimple<Registro> listasimple;
     Pila<Registro> pila;
     Cola<Registro> cola;
+    Grafo<Registro> grafo;
     ArbolBB<Registro> arbolbb;
     ArbolAVL<Registro> arbolavl;
     TablaHashA<Registro> tablahasha;
@@ -31,6 +34,7 @@ public:
     void menuListaSimple();
     void menuPila();
     void menuCola();
+    void menuGrafo();
 
     void menuArbolBB();
     void menuArbolAVL();
