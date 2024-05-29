@@ -28,6 +28,51 @@ Aplicacion::Aplicacion(){
 Aplicacion::~Aplicacion(){}
 
 
+void Aplicacion::menuMatriz(){
+    int opcion;
+    do{
+        cout << "Menu de Matriz" << endl;
+        cout << "1. Agregar" << endl;
+        cout << "2. Mostrar" << endl;
+        cout << "3. Actualizar" << endl;
+        cout << "4. Eliminar" << endl;
+        cout << "5. Salir" << endl;
+        cout << "Opcion: "; cin >> opcion;
+
+        int fila, columna;
+        int codigo;
+        string nombre;
+        double sueldo;
+
+        switch(opcion){
+            case 1:
+                cout << "Ingrese la fila: "; cin >> fila;
+                cout << "Ingrese la columna: "; cin >> columna;
+                cout << "Ingrese el codigo: "; cin >> codigo;
+                cout << "Ingrese el nombre: "; cin >> nombre;
+                cout << "Ingrese el sueldo: "; cin >> sueldo;
+                matriz.setElement(fila, columna, Registro(codigo, nombre, sueldo));
+                break;
+            case 2:
+                matriz.displayMatrix();
+                break;
+            case 3:
+                cout << "Ingrese la fila: "; cin >> fila;
+                cout << "Ingrese la columna: "; cin >> columna;
+                cout << "Ingrese el nuevo codigo: "; cin >> codigo;
+                cout << "Ingrese el nuevo nombre: "; cin >> nombre;
+                cout << "Ingrese el nuevo sueldo: "; cin >> sueldo;
+                matriz.updateElement(fila, columna, Registro(codigo, nombre, sueldo));
+                break;
+            case 4:
+                cout << "Ingrese la fila: "; cin >> fila;
+                cout << "Ingrese la columna: "; cin >> columna;
+                matriz.deleteElement(fila, columna);
+                break;
+        }
+    }while(opcion != 5);
+}
+
 void Aplicacion::menuListaSimple(){
     int opcion;
     do{

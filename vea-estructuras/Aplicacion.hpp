@@ -1,6 +1,8 @@
 #ifndef APLICACION_H
 #define APLICACION_H
 
+
+#include "Matriz2D.hpp"
 #include "ListaSimple.hpp"
 #include "Pila.hpp"
 #include "Cola.hpp"
@@ -18,6 +20,8 @@ using namespace std;
 
 class Aplicacion{
 private:
+
+    Matriz2D<Registro> matriz;
     ListaSimple<Registro> listasimple;
     Pila<Registro> pila;
     Cola<Registro> cola;
@@ -31,6 +35,7 @@ public:
     Aplicacion();
     ~Aplicacion();
     
+    void menuMatriz();
     void menuListaSimple();
     void menuPila();
     void menuCola();
