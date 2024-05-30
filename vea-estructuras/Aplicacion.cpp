@@ -1,7 +1,7 @@
 #include "Aplicacion.hpp"
 
 
-Aplicacion::Aplicacion(){
+Aplicacion::Aplicacion() : matriz(0, 0){
     auto comparacionCodigo = [](Registro r1, Registro r2){
         if(r1.getCodigo() == r2.getCodigo()){
             return 0;
@@ -29,6 +29,13 @@ Aplicacion::~Aplicacion(){}
 
 
 void Aplicacion::menuMatriz(){
+    int filas, columnas;
+    cout << "Ingrese el numero de filas para la matriz: ";
+    cin >> filas;
+    cout << "Ingrese el numero de columnas para la matriz: ";
+    cin >> columnas;
+    matriz = Matriz2D<Registro>(filas, columnas);
+
     int opcion;
     do{
         cout << "Menu de Matriz" << endl;
@@ -70,7 +77,7 @@ void Aplicacion::menuMatriz(){
                 matriz.deleteElement(fila, columna);
                 break;
         }
-    }while(opcion != 5);
+    } while(opcion != 5);
 }
 
 void Aplicacion::menuListaSimple(){
@@ -250,39 +257,42 @@ void Aplicacion::menu(){
         cout << "6. ArbolAVL" << endl;
         cout << "7. TablaHashA" << endl;
         cout << "8. TablaHashC" << endl;
-        cout << "9. Salir" << endl;
+        cout << "9. Matriz" << endl;
+        cout << "10. Salir" << endl;
         cout << "Opcion: "; cin >> opcion;
 
         switch(opcion){
             case 1:
-                Aplicacion::menuListaSimple();
+                menuListaSimple();
                 break;
             case 2:
-                Aplicacion::menuPila();
+                menuPila();
                 break;
             case 3:
-                Aplicacion::menuCola();
+                menuCola();
                 break;
             case 4:
-                Aplicacion::menuGrafo();
+                menuGrafo();
                 break;
-            case 5: 
-                Aplicacion::menuArbolBB();
+            case 5:
+                menuArbolBB();
                 break;
             case 6:
-                Aplicacion::menuArbolAVL();
+                menuArbolAVL();
                 break;
             case 7:
-                Aplicacion::menuTablaHashA();
+                menuTablaHashA();
                 break;
             case 8:
-                Aplicacion::menuTablaHashC();
+                menuTablaHashC();
+                break;
+            case 9:
+                menuMatriz();
                 break;
         }
-    }while(opcion != 9);
+    }while(opcion != 10);
 }
 
 void Aplicacion::iniciar(){
-    Aplicacion::menu();
+    menu();
 }
-
